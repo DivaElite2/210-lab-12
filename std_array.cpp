@@ -3,9 +3,10 @@
 #include <iostream>
 #include <array>
 #include <string>
+#include <fstream>
 using namespace std;
 //Declare const for values that should not change
-const int SIZE = 7;
+const int SIZE = 30;
 
 int main()
 {
@@ -18,6 +19,9 @@ array<string, SIZE >pillSchedule = {
         "Vitamin ",   // Thursday (index 4)
         "Medication ",// Friday (index 5)
         "None"  };
+         
+        ifstream fin;
+        fin.open("pillSchedule.txt")
 
         // check size of array
         cout<< "1. SIZE:  "<<pillSchedule.size()<<endl;
@@ -34,6 +38,6 @@ array<string, SIZE >pillSchedule = {
         cout << "7. Empty? " << (pillSchedule.empty() == 0? "False:" : "True")<<endl;
         cout << "8. Address? " <<pillSchedule.data()<<endl;
 
-        
+
     return 0;
 }

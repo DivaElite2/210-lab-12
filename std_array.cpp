@@ -32,5 +32,8 @@ array<string, SIZE >pillSchedule = {
         cout << "5. Front: "   <<  pillSchedule.front() <<endl;
         cout << "6. Back: " <<pillSchedule.back() << endl;
         cout << "7. Empty? " << (pillSchedule.empty() == 0? "False:" : "True")<<endl;
+        cout << "8. Address? " <<pillSchedule.data()<<endl;
+
+        
     return 0;
 }

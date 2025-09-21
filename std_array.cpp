@@ -12,18 +12,17 @@ int main()
 {
 //declarations
 array<string, SIZE >pillSchedule = {
-        "Vitamin",   // Sunday (index 0)
-        "None ",      // Monday (index 1)
-        "Medication ",// Tuesday (index 2)
-        "None ",      // Wednesday (index 3)
-        "Vitamin ",   // Thursday (index 4)
-        "Medication ",// Friday (index 5)
-        "None"  };
-         
-        ifstream fin;
-        fin.open("pillSchedule.txt")
+       
+ ifstream fin;
+  fin.open("pillSchedule.txt");
 
-        // check size of array
+  if(fin.good()) {
+    for(int i = 0; i < SIZE; i++) {
+        getline(fin, pillSchedule.at(i));
+    }
+   
+  }
+
         cout<< "1. SIZE:  "<<pillSchedule.size()<<endl;
 
         //range loop to access elements
@@ -38,6 +37,7 @@ array<string, SIZE >pillSchedule = {
         cout << "7. Empty? " << (pillSchedule.empty() == 0? "False:" : "True")<<endl;
         cout << "8. Address? " <<pillSchedule.data()<<endl;
 
-
     return 0;
+     fin.close();
+  }
 }

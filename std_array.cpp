@@ -11,17 +11,18 @@ const int SIZE = 30;
 int main()
 {
 //declarations
-array<string, SIZE >pillSchedule = {
+   array<string, SIZE >pillSchedule;
        
- ifstream fin;
-  fin.open("pillSchedule.txt");
+   ifstream fin;
+    fin.open("pillSchedule.txt");
 
-  if(fin.good()) {
-    for(int i = 0; i < SIZE; i++) {
-        getline(fin, pillSchedule.at(i));
+    // 3. Read from the file INTO the array
+    if(fin.good()) {
+        for(int i = 0; i < SIZE; i++) {
+            getline(fin, pillSchedule.at(i));
+        }
+        fin.close(); // Close file
     }
-   
-  }
 
         cout<< "1. SIZE:  "<<pillSchedule.size()<<endl;
 
@@ -38,6 +39,6 @@ array<string, SIZE >pillSchedule = {
         cout << "8. Address? " <<pillSchedule.data()<<endl;
 
     return 0;
-     fin.close();
-  }
+     
+  
 }
